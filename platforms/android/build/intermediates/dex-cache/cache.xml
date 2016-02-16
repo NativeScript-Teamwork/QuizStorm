@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-a251b75a5ef6f265d22ca5bee22db19401679737.jar" />
+    </item>
+    <item
+        jar="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\libs\nativescript.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
+        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\nativescript-0eb75d773ee90d0bb0db69eae958a23e11890694.jar" />
+    </item>
+    <item
+        jar="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\widgets-f8bc462787d91c4651b201b5629fb5894cd45e78.jar" />
+    </item>
+
+</items>
