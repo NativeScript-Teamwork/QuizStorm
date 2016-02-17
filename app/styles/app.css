@@ -31,7 +31,33 @@
 }
 
 #play-logo {
-	margin: 20px;
+	margin: 0 20 0 20;
+}
+
+#start-game-button {
+	margin: 0 85 0 85;
+}
+
+#addPlayerTextField {
+	font-weight: bold;
+	font-size: 25px;
+	text-align: center;
+	width: 200px;
+}
+
+.player-image {
+	width: 150px;
+	height: 280px;
+	text-align: center;
+}
+
+.player-name-label {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	margin: 0 2 0 2;
+	background-color: #DA5246;
 }
 
 /* ---------- Score Page CSS ---------- */
