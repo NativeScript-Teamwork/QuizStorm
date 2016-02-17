@@ -5,6 +5,7 @@ var sound = require("nativescript-sound");
 
 var pageModules = (function() {
 	var tapButtonSound = sound.create("~/sounds/tap-button.mp3");
+	var heheSound = sound.create("~/sounds/hehehe.mp3");
 
 	var topmost;
 
@@ -14,9 +15,12 @@ var pageModules = (function() {
 			page.bindingContext = vmModule.playViewModel;
 			topmost = frameModule.topmost();
 		},
-		/*navigateToPlay: function() {
+		addPlayerButton: function() {
+			heheSound.play();
+		},
+		navigateToGamePlaying: function() {
 			tapButtonSound.play();
-			var navigationEntry = {
+			/*var navigationEntry = {
 				moduleName: "./views/play/play",
 				backstackVisible: false,
                 animated: true,
@@ -25,11 +29,13 @@ var pageModules = (function() {
                 },
 			};
 
-			topmost.navigate(navigationEntry);
-		}*/
+			topmost.navigate(navigationEntry);*/
+		}
 	};
 
 	return pageModules;
 })();
 
 exports.pageLoaded = pageModules.pageLoaded;
+exports.addPlayerButton = pageModules.addPlayerButton;
+exports.navigateToGamePlaying = pageModules.navigateToGamePlaying;

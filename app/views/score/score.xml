@@ -1,20 +1,20 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <GridLayout columns="*, 2*, *" rows="3*, *, 3*, *, 3*" id="scorePageGrid">
   	<Image col="0" row="0" colSpan="3" src="~/images/score-logo.png" id="score-logo"/>
-  	<Label col="0" row="1" colSpan="3" text="Worldwide" class="score-type" />
+  	<Label col="0" row="1" colSpan="3" text="Worldwide - TOP 6" class="score-type" />
   	<StackLayout col="0" row="2" colSpan="3" class="score-stack">
         <ListView items="{{ scoreWorldwide }}" height="620">
             <ListView.itemTemplate>
                 <GridLayout columns="3*, 2*, *, 3*">
-                	<Label col="0" row="0" text="{{ $value.name }}" class="score-worldwide-label-name" />
-                	<Label col="1" row="0" text="{{ $value.score }}" class="score-worldwide-label-points" />
+                	<Label col="0" row="0" text="{{ $value.PlayerName }}" class="score-worldwide-label-name" />
+                	<Label col="1" row="0" text="{{ $value.Points }}" class="score-worldwide-label-points" />
                 	<Image col="2" row="0" src="~/images/coins.png" id="coins-image"/>
-                	<Label col="3" row="0" text="{{ $value.country }}" class="score-worldwide-label-country" />
+                	<Label col="3" row="0" text="{{ $value.Country }}" class="score-worldwide-label-country" />
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>
     </StackLayout>
-    <Label col="0" row="3" colSpan="3" text="Local" class="score-type" />
+    <Label col="0" row="3" colSpan="3" text="Local - TOP 10" class="score-type" />
     <StackLayout col="0" row="4" colSpan="3" class="score-stack">
         <ListView items="{{ scoreLocal }}" height="620">
             <ListView.itemTemplate>
