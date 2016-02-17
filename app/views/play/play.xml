@@ -1,0 +1,5 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <GridLayout columns="*, 2*, *" rows="*, *, *, *" id="playPageGrid">
+  	<Image col="0" row="0" colSpan="3" src="~/images/lets-play-logo.png" id="play-logo"/>
+  </GridLayout>
+</Page>

@@ -1,11 +1,11 @@
 {
   "_args": [
     [
-      "tns-core-modules",
+      "tns-core-modules@1.5.2",
       "C:\\Users\\dsd36\\Desktop\\QuizStorm"
     ]
   ],
-  "_from": "tns-core-modules@*",
+  "_from": "tns-core-modules@1.5.2",
   "_id": "tns-core-modules@1.5.2",
   "_inCache": true,
   "_installable": true,
@@ -19,11 +19,11 @@
   "_phantomChildren": {},
   "_requested": {
     "name": "tns-core-modules",
-    "raw": "tns-core-modules",
-    "rawSpec": "",
+    "raw": "tns-core-modules@1.5.2",
+    "rawSpec": "1.5.2",
     "scope": null,
-    "spec": "*",
-    "type": "range"
+    "spec": "1.5.2",
+    "type": "version"
   },
   "_requiredBy": [
     "/"
@@ -31,7 +31,7 @@
   "_resolved": "https://registry.npmjs.org/tns-core-modules/-/tns-core-modules-1.5.2.tgz",
   "_shasum": "2cd0ad96868d9f37ae751c285879e3eb6ee47644",
   "_shrinkwrap": null,
-  "_spec": "tns-core-modules",
+  "_spec": "tns-core-modules@1.5.2",
   "_where": "C:\\Users\\dsd36\\Desktop\\QuizStorm",
   "dependencies": {},
   "description": "Telerik NativeScript Core Modules",

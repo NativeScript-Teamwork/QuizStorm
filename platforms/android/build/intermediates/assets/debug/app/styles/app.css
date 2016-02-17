@@ -1,1 +1,25 @@
 ﻿/* Home CSS */
+
+#homeGrid {
+	background-color: #FED700;
+}
+
+#logoTitle {
+	margin: 35px;
+}
+
+#playButton {
+	font-size: 35px;
+	color: white;
+	font-family: monospace;
+	background-color: #0271BC;
+	margin: 5px;
+}
+
+#scoreButton {
+	font-size: 35px;
+	color: white;
+	font-family: monospace;
+	background-color: #0271BC;
+	margin: 5px;
+}

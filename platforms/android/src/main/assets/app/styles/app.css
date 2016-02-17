@@ -1,10 +1,10 @@
-﻿/* Home CSS */
+﻿/* ---------- Home Page CSS ---------- */
 
 #homeGrid {
 	background-color: #FED700;
 }
 
-#logoTitle {
+#home-game-logo {
 	margin: 35px;
 }
 
@@ -22,4 +22,24 @@
 	font-family: monospace;
 	background-color: #0271BC;
 	margin: 5px;
+}
+
+/* ---------- Play Page CSS ---------- */
+
+#playPageGrid {
+	background-color: #FED700;
+}
+
+#play-logo {
+	margin: 20px;
+}
+
+/* ---------- Score Page CSS ---------- */
+
+#scorePageGrid {
+	background-color: #FED700;
+}
+
+#score-logo {
+	margin: 30px;
 }

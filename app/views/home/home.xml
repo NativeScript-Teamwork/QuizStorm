@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <GridLayout columns="*, 2*, *" rows="3*, *, *, *" id="homeGrid">
+  	<Image col="0" row="0" colSpan="3" src="~/images/logo.png" id="home-game-logo"/>
+    <Button col="0" row="1" colSpan="3" text="Play" id="playButton" tap="navigateToPlayPage"/>
+    <Button col="0" row="2" colSpan="3" text="Score" id="scoreButton" tap="navigateToScorePage"/>
+    <Image col="1" row="3" colSpan="3" src="~/images/minion.png" tap="bananaSoundPlay"/>
+  </GridLayout>
+</Page>
