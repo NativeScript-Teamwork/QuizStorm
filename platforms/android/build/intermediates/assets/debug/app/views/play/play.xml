@@ -1,0 +1,13 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <GridLayout columns="*, *, *, *" rows="2*, *, *, 5*, *, 2*" id="playPageGrid">
+  	<Image col="0" row="0" colSpan="4" src="~/images/lets-play-logo.png" id="play-logo"/>
+  	<TextField col="0" row="1" colSpan="4" id="addPlayerTextField" class="text-input" 
+  		keyboardType="text=" autocorrect="false" hint="Player Name" text="{{ player }}"/>
+  	<Image col="0" row="2" colSpan="4" src="~/images/add-player-button.png" id="add-player-button" tap="addPlayerButton"/>
+  	<Image col="0" row="3" colSpan="2" src="~/images/player-one.png" class="player-image"/>
+  	<Image col="2" row="3" colSpan="2" src="~/images/player-two.png" class="player-image"/>
+  	<Label col="0" row="4" colSpan="2" text="Player 1" class="player-name-label" />
+  	<Label col="2" row="4" colSpan="2" text="Player 2" class="player-name-label" />
+  	<Image col="0" row="5" colSpan="4" src="~/images/start-playing-button.png" id="start-game-button" tap="navigateToGamePlaying"/>
+  </GridLayout>
+</Page>

@@ -1,82 +1,54 @@
 {
-  "_args": [
-    [
-      "nativescript-sound@^1.0.4",
-      "C:\\Users\\dsd36\\Desktop\\QuizStorm"
-    ]
-  ],
-  "_from": "nativescript-sound@>=1.0.4 <2.0.0",
-  "_id": "nativescript-sound@1.0.4",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/nativescript-sound",
-  "_nodeVersion": "0.12.7",
-  "_npmUser": {
-    "email": "john@bristowe.com",
-    "name": "jbristowe"
+  "name": "nativescript-sound",
+  "version": "1.0.4",
+  "description": "Play a sound in your NativeScript app",
+  "main": "sound.js",
+  "nativescript": {
+    "platforms": {
+      "ios": "1.3.0",
+      "android": "1.3.0"
+    }
   },
-  "_npmVersion": "2.11.3",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "nativescript-sound",
-    "raw": "nativescript-sound@^1.0.4",
-    "rawSpec": "^1.0.4",
-    "scope": null,
-    "spec": ">=1.0.4 <2.0.0",
-    "type": "range"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbristowe/nativescript-sound.git"
   },
-  "_requiredBy": [
-    "/"
+  "keywords": [
+    "NativeScript",
+    "Sound",
+    "Audio"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz",
-  "_shasum": "e8ad0aacd8eb5fb4e352fb5ae9fdd2d60de399eb",
-  "_shrinkwrap": null,
-  "_spec": "nativescript-sound@^1.0.4",
-  "_where": "C:\\Users\\dsd36\\Desktop\\QuizStorm",
   "author": {
-    "email": "john@bristowe.com",
     "name": "John Bristowe",
+    "email": "john@bristowe.com",
     "url": "https://github.com/jbristowe"
   },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jbristowe/nativescript-sound/issues"
   },
-  "dependencies": {},
-  "description": "Play a sound in your NativeScript app",
-  "devDependencies": {},
-  "directories": {},
+  "homepage": "https://github.com/jbristowe/nativescript-sound",
+  "gitHead": "6ee371ab7ef5acdec178cff18d2536e713db7161",
+  "_id": "nativescript-sound@1.0.4",
+  "scripts": {},
+  "_shasum": "e8ad0aacd8eb5fb4e352fb5ae9fdd2d60de399eb",
+  "_from": "nativescript-sound@>=1.0.4 <2.0.0",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "jbristowe",
+    "email": "john@bristowe.com"
+  },
   "dist": {
     "shasum": "e8ad0aacd8eb5fb4e352fb5ae9fdd2d60de399eb",
     "tarball": "http://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz"
   },
-  "gitHead": "6ee371ab7ef5acdec178cff18d2536e713db7161",
-  "homepage": "https://github.com/jbristowe/nativescript-sound",
-  "keywords": [
-    "Audio",
-    "NativeScript",
-    "Sound"
-  ],
-  "license": "MIT",
-  "main": "sound.js",
   "maintainers": [
     {
       "name": "jbristowe",
       "email": "john@bristowe.com"
     }
   ],
-  "name": "nativescript-sound",
-  "nativescript": {
-    "platforms": {
-      "android": "1.3.0",
-      "ios": "1.3.0"
-    }
-  },
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jbristowe/nativescript-sound.git"
-  },
-  "scripts": {},
-  "version": "1.0.4"
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/nativescript-sound/-/nativescript-sound-1.0.4.tgz"
 }

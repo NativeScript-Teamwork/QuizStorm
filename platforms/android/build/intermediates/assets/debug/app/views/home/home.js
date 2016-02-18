@@ -1,23 +1,38 @@
-var vmModule = require("./views/home/home-view-model");
+var vmModule = require("./home-view-model");
 var frameModule = require("ui/frame");
-var pagesModule = require("ui/page");
 var sound = require("nativescript-sound");
 
 var pageModules = (function() {
+	var bananaSound = sound.create("~/sounds/banana.mp3");
+	var tapButtonSound = sound.create("~/sounds/tap-button.mp3");
+
 	var pageModules = {
 		pageLoaded: function(args) {
 			var page = args.object;
-			page.bindingContext = vmModule.mainViewModel;
+			page.bindingContext = vmModule.homeViewModel;
 			topmost = frameModule.topmost();
 		},
 		bananaSoundPlay: function() {
-			var bananaSound = sound.create("~/sounds/banana.mp3");
 			bananaSound.play();
 		},
-		navigateToPlay: function() {
+		navigateToPlayPage: function() {
+			tapButtonSound.play();
 			var navigationEntry = {
 				moduleName: "./views/play/play",
-				backstackVisible: false,
+				backstackVisible: true,
+                animated: true,
+                navigationTransition: {
+                    transition: "flip "                   
+                },
+			};
+
+			topmost.navigate(navigationEntry);
+		},
+		navigateToScorePage: function() {
+			tapButtonSound.play();
+			var navigationEntry = {
+				moduleName: "./views/score/score",
+				backstackVisible: true,
                 animated: true,
                 navigationTransition: {
                     transition: "flip "                   
@@ -33,3 +48,5 @@ var pageModules = (function() {
 
 exports.pageLoaded = pageModules.pageLoaded;
 exports.bananaSoundPlay = pageModules.bananaSoundPlay;
+exports.navigateToPlayPage = pageModules.navigateToPlayPage;
+exports.navigateToScorePage = pageModules.navigateToScorePage;

@@ -1,10 +1,10 @@
-﻿/* Home CSS */
+﻿/* ---------- Home Page CSS ---------- */
 
 #homeGrid {
 	background-color: #FED700;
 }
 
-#logoTitle {
+#home-game-logo {
 	margin: 35px;
 }
 
@@ -22,4 +22,93 @@
 	font-family: monospace;
 	background-color: #0271BC;
 	margin: 5px;
+}
+
+/* ---------- Play Page CSS ---------- */
+
+#playPageGrid {
+	background-color: #FED700;
+}
+
+#play-logo {
+	margin: 0 20 0 20;
+}
+
+#start-game-button {
+	margin: 0 85 0 85;
+}
+
+#addPlayerTextField {
+	font-weight: bold;
+	font-size: 25px;
+	text-align: center;
+	width: 200px;
+}
+
+.player-image {
+	width: 150px;
+	height: 280px;
+	text-align: center;
+}
+
+.player-name-label {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	margin: 0 2 0 2;
+	background-color: #DA5246;
+}
+
+/* ---------- Score Page CSS ---------- */
+
+#scorePageGrid {
+	background-color: #FED700;
+}
+
+#score-logo {
+	margin: 40px;
+}
+
+.score-worldwide-label-name {
+	font-size: 20px;
+	color: white;
+	margin: 1px;
+	text-align: center;
+	height: 33px;
+}
+
+.score-worldwide-label-country {
+	font-size: 20px;
+	color: white;
+	margin: 1 0 1 0;
+	text-align: center;
+	background-color: #3CC416;
+	height: 33px;
+}
+
+.score-worldwide-label-points {
+	font-size: 20px;
+	color: #0097EF;;
+	margin: 1px;
+	padding: 0 3 0 0;
+	text-align: right;
+	height: 33px;
+}
+
+.score-type {
+	text-align: center;
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+	background-color: #EF3F3F;
+}
+
+.score-stack {
+	width: 310px;
+}
+
+#coins-image {
+	width: 30px;
+	height: 30px;
 }

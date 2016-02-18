@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/colors.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/colors.xml -->
     <eat-comment/>
     <color name="ns_accent">#3d5afe</color>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppThemeBase">
         <item name="android:datePickerStyle">@style/SpinnerDatePicker</item>
         <item name="android:timePickerStyle">@style/SpinnerTimePicker</item>       
     </style>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance.Material"/>
     <style name="Base.TextAppearance.AppCompat.Body1" parent="android:TextAppearance.Material.Body1"/>
@@ -74,8 +74,6 @@
         <item name="actionBarDivider">?android:attr/actionBarDivider</item>
         <item name="actionBarItemBackground">@drawable/abc_action_bar_item_background_material</item>
         <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
-        <item name="actionMenuTextColor">?android:attr/actionMenuTextColor</item>
-        <item name="actionMenuTextAppearance">?android:attr/actionMenuTextAppearance</item>
         <item name="actionModeBackground">?android:attr/actionModeBackground</item>
         <item name="actionModeCloseDrawable">?android:attr/actionModeCloseDrawable</item>
         <item name="actionOverflowButtonStyle">?android:attr/actionOverflowButtonStyle</item>
@@ -123,8 +121,6 @@
         <item name="actionBarDivider">?android:attr/actionBarDivider</item>
         <item name="actionBarItemBackground">@drawable/abc_action_bar_item_background_material</item>
         <item name="actionButtonStyle">?android:attr/actionButtonStyle</item>
-        <item name="actionMenuTextColor">?android:attr/actionMenuTextColor</item>
-        <item name="actionMenuTextAppearance">?android:attr/actionMenuTextAppearance</item>
         <item name="actionModeBackground">?android:attr/actionModeBackground</item>
         <item name="actionModeCloseDrawable">?android:attr/actionModeCloseDrawable</item>
         <item name="actionOverflowButtonStyle">?android:attr/actionOverflowButtonStyle</item>
@@ -225,12 +221,12 @@
     <style name="Base.Widget.AppCompat.TextView.SpinnerItem" parent="android:Widget.Material.TextView.SpinnerItem"/>
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="android:Widget.Material.Toolbar.Button.Navigation">
     </style>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="NativeScriptToolbarStyle" parent="NativeScriptToolbarStyleBase">
         <item name="android:elevation">4dp</item>
     </style>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values-v21/values-v21.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v21/values-v21.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme.Material">
         <item name="android:windowNoTitle">true</item>
@@ -258,7 +254,7 @@
     </style>
     <style name="Platform.ThemeOverlay.AppCompat.Dark"/>
     <style name="Platform.ThemeOverlay.AppCompat.Light"/>
-    <!-- From: file:/C:/Users/dsd36/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="SpinnerDatePicker" parent="android:Widget.Material.Light.DatePicker">
         <item name="android:datePickerMode">spinner</item>
