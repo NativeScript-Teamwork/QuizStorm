@@ -19,10 +19,10 @@ var pageModules = (function() {
 			tapButtonSound.play();
 			var navigationEntry = {
 				moduleName: "./views/play/play",
-				backstackVisible: true,
+				backstackVisible: false,
                 animated: true,
                 navigationTransition: {
-                    transition: "flip "                   
+                    transition: "flip "
                 },
 			};
 
@@ -35,7 +35,7 @@ var pageModules = (function() {
 				backstackVisible: true,
                 animated: true,
                 navigationTransition: {
-                    transition: "flip "                   
+                    transition: "flip "
                 },
 			};
 

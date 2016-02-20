@@ -1,4 +1,10 @@
-﻿/* ---------- Home Page CSS ---------- */
+/* ---------- Common CSS ---------- */
+
+.defaultGrid {
+		background-color: #FED700;
+}
+
+/* ---------- Home Page CSS ---------- */
 
 #homeGrid {
 	background-color: #FED700;
@@ -160,7 +166,7 @@
 
 .score-worldwide-label-points {
 	font-size: 20px;
-	color: #0097EF;;
+	color: #0097EF;
 	margin: 1px;
 	padding: 0 3 0 0;
 	text-align: right;
@@ -182,4 +188,26 @@
 #coins-image {
 	width: 30px;
 	height: 30px;
+}
+/* ---------- Tips Page CSS ---------- */
+.tips-image {
+	width: 250;
+	height: 380;
+	text-align: center;
+}
+
+.main-tip {
+	text-align: center;
+	font-size: 15;
+	padding: 20;
+	font-weight: bold;
+	color: #0271BC;
+}
+
+.continue-button {
+	font-size: 35px;
+	color: white;
+	font-family: monospace;
+	background-color: #0271BC;
+	margin: 5px;
 }

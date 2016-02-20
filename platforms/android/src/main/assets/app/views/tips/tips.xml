@@ -1,5 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <StackLayout>
-    <Label text="Tips page"/>
-  </StackLayout>
+  <GridLayout columns="*, *" rows="5*, 5*, *" class="defaultGrid">
+    <Image row="1" col="1" rowspan="2" src="~/images/tips-minion.png"/>
+    <Image row="0" col="0" colspan="2" src="~/images/game-tip.png"/>
+    <Button row="1" col="0" text="Continue" class="continue-button" verticalAlignment="bottom" tap="navigateToGame"/>
+  </GridLayout>
 </Page>
