@@ -4,13 +4,13 @@
   		<Label col="0" row="0" text="Player 1" class="gameGridPlayerLabel" />
   		<Label col="1" row="0" text="3740" class="gameGridPlayerLabel pointsGame" />
   		<Image col="2" row="0" src="~/images/coins.png" class="coins-image-game-grid"/>
-  	</GridLayout> 
+  	</GridLayout>
   	<GridLayout col="1" row="0" columns="2*,*,*" id="playerTwoPointsGrid">
   		<Label col="0" row="0" text="Player 2" class="gameGridPlayerLabel" />
   		<Label col="1" row="0" text="0" class="gameGridPlayerLabel pointsGame" />
   		<Image col="2" row="0" src="~/images/coins.png" class="coins-image-game-grid"/>
-  	</GridLayout> 
-  	<Image col="0" row="1" colSpan="2" src="~/images/timer/timer-10.png" id="timer-sprite"/>
+  	</GridLayout>
+  	<Image col="0" row="1" colSpan="2" src="{{timerImageSrc}}" id="timer-sprite"/>
   	<GridLayout col="0" row="2" colSpan="2" id="questionGridLabel" >
   		<Label col="0" row="0" colSpan="2" text="When was Telerik founded?" textWrap="true"
   		verticalAlignment="center" id="question"/>
