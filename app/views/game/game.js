@@ -6,6 +6,7 @@ var sound = require("nativescript-sound");
 
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
+var heheSound = sound.create("~/sounds/hehehe.mp3");
 
 var pageModules = (function() {
 
@@ -18,7 +19,6 @@ var pageModules = (function() {
 		}
 	};
 
-
 	return pageModules;
 })();
 
@@ -30,6 +30,7 @@ function startTimer() {
 
 		if (vmModule.gameViewModel.questionTimer === 0) {
 			timer.clearInterval(timerInterval);
+			heheSound.play();
 		}
 	}, 1000);
 }
