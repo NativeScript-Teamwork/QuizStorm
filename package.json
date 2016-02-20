@@ -6,7 +6,9 @@
     }
   },
   "dependencies": {
+    "nativescript-accelerometer": "^0.3.1",
     "nativescript-sound": "^1.0.4",
+    "nativescript-sqlite": "^1.0.8",
     "tns-core-modules": "1.5.2"
   }
 }
