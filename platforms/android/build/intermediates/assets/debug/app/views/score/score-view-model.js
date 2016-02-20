@@ -24,6 +24,6 @@ local.push({name: 'Ivaylo', score: 55, country: 'Bulgaria'});
 
 ScoreModel.set(scoreLocalPropName, local);
 
-// TODO: Get local statistics 
+// TODO: Get local statistics
 
 exports.scoreViewModel = ScoreModel;

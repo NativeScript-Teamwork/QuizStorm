@@ -60,6 +60,27 @@
 	background-color: #DA5246;
 }
 
+/* ---------- Game Page CSS ---------- */
+
+#player1Label {
+	text-align: center;
+	font-size: 20;
+	background-color: red;
+}
+
+#player2Label {
+	text-align: center;
+	font-size: 20;
+	background-color: blue;
+}
+
+.question {
+	text-align: center;
+	font-size: 20;
+	background-color: green;
+
+}
+
 /* ---------- Score Page CSS ---------- */
 
 #scorePageGrid {

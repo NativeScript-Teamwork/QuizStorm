@@ -17,43 +17,46 @@ var pageModules = (function() {
 			var page = args.object;
 			page.bindingContext = vmModule.playViewModel;
 			topmost = frameModule.topmost();
+			
 		},
 		addPlayerButton: function(args) {
 			heheSound.play();
-
 			var page = args.object.page;
-
 			var addPlayerTextField = view.getViewById(page, "addPlayerTextField");
 
+			if (!addPlayerTextField.text) {
+				return;
+			}
+
 			if (players.length === 0) {
-					var player1NameTextField = view.getViewById(page, "player1-name");
-					player1NameTextField.text = addPlayerTextField.text;
-					players.push({name: addPlayerTextField.text, score: 0});
+				var player1NameTextField = view.getViewById(page, "player1-name");
+				player1NameTextField.text = addPlayerTextField.text;
+				players.push({name: addPlayerTextField.text, score: 0});
 			}
 			else if (players.length === 1){
-					var player2NameTextField = view.getViewById(page, "player2-name");
-					player2NameTextField.text = addPlayerTextField.text;
-					players.push({name: addPlayerTextField.text, score: 0});
+				var player2NameTextField = view.getViewById(page, "player2-name");
+				player2NameTextField.text = addPlayerTextField.text;
+				players.push({name: addPlayerTextField.text, score: 0});
 			}
 
 			addPlayerTextField.text = "";
 		},
 		navigateToGamePlaying: function() {
 			tapButtonSound.play();
-			/*var navigationEntry = {
-			moduleName: "./views/play/play",
-			backstackVisible: false,
-			animated: true,
-			navigationTransition: {
-			transition: "flip "
-		},
+			var navigationEntry = {
+				moduleName: "./views/game/game",
+				backstackVisible: false,
+				animated: true,
+				navigationTransition: {
+					transition: "flip "
+				},
+			};
+
+			topmost.navigate(navigationEntry);
+		}
 	};
 
-	topmost.navigate(navigationEntry);*/
-}
-};
-
-return pageModules;
+	return pageModules;
 })();
 
 exports.pageLoaded = pageModules.pageLoaded;

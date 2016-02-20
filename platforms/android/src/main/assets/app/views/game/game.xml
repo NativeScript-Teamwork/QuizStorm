@@ -1,0 +1,9 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <GridLayout columns="6*, 5*, 5*" rows="1*, 15*" backgroundColor="yellow">
+    <Label text="player1:0" id="player1Label" row="0" col="1"/>
+    <Label text="player2:0" id="player2Label" row="0" col="2"/>
+    <GridLayout columns="*, 3*, 1*, 3*, *" rows="*, *, *, *, *" row="1" col="0" colspan="3">
+      <Label text="What ya doin lil f*ckah" class="question" col="1" colspan="3" row="1"/>
+    </GridLayout>
+  </GridLayout>
+</Page>
