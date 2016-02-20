@@ -17,7 +17,7 @@ var pageModules = (function() {
 			var page = args.object;
 			page.bindingContext = vmModule.playViewModel;
 			topmost = frameModule.topmost();
-			
+
 		},
 		addPlayerButton: function(args) {
 			heheSound.play();
@@ -41,10 +41,10 @@ var pageModules = (function() {
 
 			addPlayerTextField.text = "";
 		},
-		navigateToGamePlaying: function() {
+		navigateToTips: function() {
 			tapButtonSound.play();
 			var navigationEntry = {
-				moduleName: "./views/game/game",
+				moduleName: "./views/tips/tips",
 				backstackVisible: false,
 				animated: true,
 				navigationTransition: {
@@ -61,4 +61,4 @@ var pageModules = (function() {
 
 exports.pageLoaded = pageModules.pageLoaded;
 exports.addPlayerButton = pageModules.addPlayerButton;
-exports.navigateToGamePlaying = pageModules.navigateToGamePlaying;
+exports.navigateToTips = pageModules.navigateToTips;

@@ -8,6 +8,6 @@
   	<Image col="2" row="3" colSpan="2" src="~/images/player-two.png" class="player-image"/>
   	<Label col="0" row="4" colSpan="2" id="player1-name" text="Player 1" class="player-name-label" />
   	<Label col="2" row="4" colSpan="2" id="player2-name" text="Player 2" class="player-name-label" />
-  	<Image col="0" row="5" colSpan="4" src="~/images/start-playing-button.png" id="start-game-button" tap="navigateToGamePlaying"/>
+  	<Image col="0" row="5" colSpan="4" src="~/images/start-playing-button.png" id="start-game-button" tap="navigateToTips"/>
   </GridLayout>
 </Page>
