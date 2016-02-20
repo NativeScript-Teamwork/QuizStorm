@@ -62,23 +62,73 @@
 
 /* ---------- Game Page CSS ---------- */
 
-#player1Label {
-	text-align: center;
-	font-size: 20;
-	background-color: red;
+#gamePageGrid {
+	background-color: #FED700;
 }
 
-#player2Label {
+#playerOnePointsGrid {
+	background-color: #D9523C;
 	text-align: center;
-	font-size: 20;
-	background-color: blue;
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	height: 32px;
+	margin: 4 2 4 4;
 }
 
-.question {
+#playerTwoPointsGrid {
+	background-color:  #4B8AF4;
 	text-align: center;
-	font-size: 20;
-	background-color: green;
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+	height: 32px;
+	margin: 4 4 4 2;
+}
 
+.coins-image-game-grid {
+	height: 28px;
+}
+
+.gameGridPlayerLabel {
+	height: 30px;
+}
+
+.pointsGame {
+	text-align: right;
+	margin: 3 0 0 0;
+}
+
+#timer-sprite {
+	margin: 6 0 0 0;
+}
+
+#question {
+	margin: 10 5 5 5;
+	padding: 15 0 15 0;
+	text-align: center;
+	background-color: #76B900;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	vertical-align: middle;
+}
+
+#questionGridLabel {
+	background-color: #76B900;
+	margin: 15 5 10 5;
+	border-radius: 15;
+}
+
+.answerLabel {
+	padding: 11;
+	margin: 0 10 3 10;
+	background-color: #2184C8;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 21;
+	border-radius: 20;
 }
 
 /* ---------- Score Page CSS ---------- */
