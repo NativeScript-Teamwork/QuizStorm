@@ -8,12 +8,17 @@ var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
 var heheSound = sound.create("~/sounds/hehehe.mp3");
 
-var pageModules = (function() {
+var questions;
 
+var pageModules = (function() {
 	var pageModules = {
 		pageLoaded: function(args) {
 			var page = args.object;
 			page.bindingContext = vmModule.gameViewModel;
+			vmModule.gameViewModel.get("allQuestions")
+				.then(function(data) {
+					setQuestion(data);
+				});
 			topmost = frameModule.topmost();
 			startTimer();
 		}
@@ -33,6 +38,14 @@ function startTimer() {
 			heheSound.play();
 		}
 	}, 1000);
+}
+
+function setQuestion(data) {
+	vmModule.gameViewModel.set("answerA", data[0].AnswerA);
+	vmModule.gameViewModel.set("answerB", data[0].AnswerB);
+	vmModule.gameViewModel.set("answerC", data[0].AnswerC);
+	vmModule.gameViewModel.set("answerD", data[0].AnswerD);
+	vmModule.gameViewModel.set("questionContent", data[0].QuestionContent);
 }
 
 exports.pageLoaded = pageModules.pageLoaded;

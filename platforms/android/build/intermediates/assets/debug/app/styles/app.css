@@ -205,9 +205,13 @@
 }
 
 .continue-button {
-	font-size: 35px;
+	font-size: 25;
 	color: white;
+	padding: 10 0;
+	margin: 15 7;
+	border-color: white;
+	border-width: 2;
+	border-radius: 10;
 	font-family: monospace;
 	background-color: #0271BC;
-	margin: 5px;
 }

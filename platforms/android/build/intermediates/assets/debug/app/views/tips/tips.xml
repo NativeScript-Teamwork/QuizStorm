@@ -1,9 +1,8 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout columns="*, *" rows="5*, 5*, *" class="defaultGrid">
-    <Image row="1" col="1" rowspan="2" src="~/images/tips-minion.png"/>
-    <Label row="0" col="0" colspan="2" text="There are 2 players, who plays first will be chosen randomly. The player with minion is first. A player has to answer questions within 10 seconds. Each time a player gives correct answer he will be asked another question until he isn't able to give correct answer or the questions run out. After a players round ends the other player round will begin!" textWrap="true" class="main-tip" verticalAlignment="center"/>
-    
-    <Label row="1" col="0" text="" backgroundColor="purple"/>
-    <Label row="2" col="0" text="" backgroundColor="blue"/>
+  <GridLayout columns="*, *" rows="*, 8*, 5*, 3*" class="defaultGrid">
+    <Image row="0" col="0" colspan="2" src="~/images/how-to-play.png" horizontalAlignment="center" />
+    <Image row="2" col="1" rowspan="2" src="~/images/tips-minion.png"/>
+    <Image row="1" col="0" colspan="2" src="~/images/game-tip.png" />
+    <Button row="2" col="0" rowspan="2" text="Continue" class="continue-button" verticalAlignment="bottom" tap="navigateToGame"/>
   </GridLayout>
 </Page>
