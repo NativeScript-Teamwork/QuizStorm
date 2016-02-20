@@ -1,7 +1,8 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout columns="*, *" rows="5*, 5*, *" class="defaultGrid">
-    <Image row="1" col="1" rowspan="2" src="~/images/tips-minion.png"/>
-    <Image row="0" col="0" colspan="2" src="~/images/game-tip.png"/>
-    <Button row="1" col="0" text="Continue" class="continue-button" verticalAlignment="bottom" tap="navigateToGame"/>
+  <GridLayout columns="*, *" rows="*, 8*, 5*, 3*" class="defaultGrid">
+    <Image row="0" col="0" colspan="2" src="~/images/how-to-play.png" horizontalAlignment="center" />
+    <Image row="2" col="1" rowspan="2" src="~/images/tips-minion.png"/>
+    <Image row="1" col="0" colspan="2" src="~/images/game-tip.png" />
+    <Button row="2" col="0" rowspan="2" text="Continue" class="continue-button" verticalAlignment="bottom" tap="navigateToGame"/>
   </GridLayout>
 </Page>
