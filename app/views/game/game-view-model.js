@@ -11,8 +11,6 @@ var GameModel = (function (_super) {
     this.timerImageSrc = "~/images/timer/timer-10.png";
 
     var questions = el.data('Question');
-    // var query = new Everlive.Query();
-    // query.take(2);
 
     this.allQuestions = questions.get().then(function(data) {
       return data.result;

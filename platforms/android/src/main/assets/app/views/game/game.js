@@ -8,7 +8,7 @@ var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
 var heheSound = sound.create("~/sounds/hehehe.mp3");
 
-var questions;
+var players = [{name: "Gosho", score: 0, turn: false, country: "Bulgaria"}, {name: "Penka", score: 0, turn: false, country: "Bulgaria"}];
 
 var pageModules = (function() {
 	var pageModules = {
@@ -17,7 +17,8 @@ var pageModules = (function() {
 			page.bindingContext = vmModule.gameViewModel;
 			vmModule.gameViewModel.get("allQuestions")
 				.then(function(data) {
-					setQuestion(data);
+					var randomizedData = randomizeArray(data);
+					setQuestion(randomizedData);
 				});
 			topmost = frameModule.topmost();
 			startTimer();
@@ -46,6 +47,21 @@ function setQuestion(data) {
 	vmModule.gameViewModel.set("answerC", data[0].AnswerC);
 	vmModule.gameViewModel.set("answerD", data[0].AnswerD);
 	vmModule.gameViewModel.set("questionContent", data[0].QuestionContent);
+}
+
+function randomizeArray(array) {
+	var newArray = [];
+
+	while (array.length !== 0) {
+		var random = Math.floor(Math.random() * array.length);
+
+		var value = array[random];
+		array.splice(random, 1);
+
+		newArray.push(value);
+	}
+
+	return newArray;
 }
 
 exports.pageLoaded = pageModules.pageLoaded;
