@@ -8,6 +8,11 @@ var GameModel = (function (_super) {
   function GameModel() {
     _super.call(this);
     this.questionTimer = 10;
+    this.turnCol = 0;
+
+    this.redPlayer = {name: "Gosho", score: 0, turn: false, country: "Bulgaria"};
+    this.bluePlayer = {name: "Penka", score: 0, turn: false, country: "Bulgaria"};
+
     this.timerImageSrc = "~/images/timer/timer-10.png";
 
     var questions = el.data('Question');
@@ -18,7 +23,6 @@ var GameModel = (function (_super) {
       console.log(error);
     });
   }
-
   return GameModel;
 })(observable.Observable);
 

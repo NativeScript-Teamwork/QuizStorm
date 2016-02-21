@@ -1,27 +1,28 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <GridLayout columns="*, *" rows="2*,3*,5*,2*,2*,2*,2*,*" id="gamePageGrid">
   	<GridLayout col="0" row="0" columns="2*,*,*" id="playerOnePointsGrid">
-  		<Label col="0" row="0" text="Player 1" class="gameGridPlayerLabel" />
-  		<Label col="1" row="0" text="3740" class="gameGridPlayerLabel pointsGame" />
+  		<Label col="0" row="0" text="{{redPlayer.name}}" class="gameGridPlayerLabel" />
+  		<Label col="1" row="0" text="{{redPlayer.score}}" class="gameGridPlayerLabel pointsGame" />
   		<Image col="2" row="0" src="~/images/coins.png" class="coins-image-game-grid"/>
   	</GridLayout>
   	<GridLayout col="1" row="0" columns="2*,*,*" id="playerTwoPointsGrid">
-  		<Label col="0" row="0" text="Player 2" class="gameGridPlayerLabel" />
-  		<Label col="1" row="0" text="0" class="gameGridPlayerLabel pointsGame" />
+  		<Label col="0" row="0" text="{{bluePlayer.name}}" class="gameGridPlayerLabel" />
+  		<Label col="1" row="0" text="{{bluePlayer.score}}" class="gameGridPlayerLabel pointsGame" />
   		<Image col="2" row="0" src="~/images/coins.png" class="coins-image-game-grid"/>
   	</GridLayout>
   	<Image col="0" row="1" colSpan="2" src="{{timerImageSrc}}" id="timer-sprite"/>
+    <Image col="{{turnCol}}" row="1" src="~/images/turn-minion.png"/>
   	<GridLayout col="0" row="2" colSpan="2" id="questionGridLabel" >
   		<Label col="0" row="0" colSpan="2" text="{{questionContent}}" textWrap="true"
   		verticalAlignment="center" id="question"/>
   	</GridLayout>
-  	<Label col="0" row="3" colSpan="2" text="{{answerA}}" textWrap="true"
+  	<Label col="0" row="3" colSpan="2" text="{{answerA}}" tap="answerTapped" textWrap="true"
   		verticalAlignment="center" id="AnswerA" class="answerLabel" />
-  	<Label col="0" row="4" colSpan="2" text="{{answerB}}" textWrap="true"
+  	<Label col="0" row="4" colSpan="2" text="{{answerB}}" tap="answerTapped" textWrap="true"
   		verticalAlignment="center" id="AnswerB" class="answerLabel" />
-  	<Label col="0" row="5" colSpan="2" text="{{answerC}}" textWrap="true"
+  	<Label col="0" row="5" colSpan="2" text="{{answerC}}" tap="answerTapped" textWrap="true"
   		verticalAlignment="center" id="AnswerC" class="answerLabel" />
-  	<Label col="0" row="6" colSpan="2" text="{{answerD}}" textWrap="true"
+  	<Label col="0" row="6" colSpan="2" text="{{answerD}}" tap="answerTapped" textWrap="true"
   		verticalAlignment="center" id="AnswerD" class="answerLabel" />
   </GridLayout>
 </Page>
