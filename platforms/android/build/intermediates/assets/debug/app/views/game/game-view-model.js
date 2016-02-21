@@ -14,8 +14,8 @@ var GameModel = (function (_super) {
     // var query = new Everlive.Query();
     // query.take(2);
 
-    questions.get().then(function(data) {
-      console.dir(data.result);
+    this.allQuestions = questions.get().then(function(data) {
+      return data.result;
     }, function(error){
       console.log(error);
     });
@@ -23,6 +23,5 @@ var GameModel = (function (_super) {
 
   return GameModel;
 })(observable.Observable);
-
 
 exports.gameViewModel = new GameModel();

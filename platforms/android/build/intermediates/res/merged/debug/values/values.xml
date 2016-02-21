@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -54,12 +54,12 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values/colors.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="ns_accent">#33B5E5</color>
     <color name="ns_primary">#F5F5F5</color>
     <color name="ns_primaryDark">#757575</color>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
@@ -216,22 +216,22 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">QuizStorm</string>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_kimera">QuizStorm</string>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="AppThemeBase">
     </style>
@@ -242,7 +242,7 @@
     	<item name="colorPrimaryDark">@color/ns_primaryDark</item>
 		<item name="colorAccent">@color/ns_accent</item>
     </style>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1179,7 +1179,7 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="NativeScriptToolbarStyle" parent="NativeScriptToolbarStyleBase">
     </style>
@@ -1188,7 +1188,7 @@
         <item name="theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
     </style>
-    <!-- From: file:/C:/Users/BaSk3T/Desktop/QuizStorm/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
+    <!-- From: file:/C:/Users/dsd36/Desktop/NativeScript%20Teamwork/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/res/values/values.xml -->
     <eat-comment/>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>

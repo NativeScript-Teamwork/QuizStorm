@@ -14,7 +14,7 @@
             </ListView.itemTemplate>
         </ListView>
     </StackLayout>
-    <Label col="0" row="3" colSpan="3" text="Local - TOP 10" class="score-type" />
+    <Label col="0" row="3" colSpan="3" text="Local - TOP 4" class="score-type" />
     <StackLayout col="0" row="4" colSpan="3" class="score-stack">
         <ListView items="{{ scoreLocal }}" height="620">
             <ListView.itemTemplate>

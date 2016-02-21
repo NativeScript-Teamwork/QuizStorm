@@ -12,16 +12,16 @@
   	</GridLayout>
   	<Image col="0" row="1" colSpan="2" src="{{timerImageSrc}}" id="timer-sprite"/>
   	<GridLayout col="0" row="2" colSpan="2" id="questionGridLabel" >
-  		<Label col="0" row="0" colSpan="2" text="When was Telerik founded?" textWrap="true"
+  		<Label col="0" row="0" colSpan="2" text="{{questionContent}}" textWrap="true"
   		verticalAlignment="center" id="question"/>
   	</GridLayout>
-  	<Label col="0" row="3" colSpan="2" text="2003" textWrap="true"
+  	<Label col="0" row="3" colSpan="2" text="{{answerA}}" textWrap="true"
   		verticalAlignment="center" id="AnswerA" class="answerLabel" />
-  	<Label col="0" row="4" colSpan="2" text="1998" textWrap="true"
+  	<Label col="0" row="4" colSpan="2" text="{{answerB}}" textWrap="true"
   		verticalAlignment="center" id="AnswerB" class="answerLabel" />
-  	<Label col="0" row="5" colSpan="2" text="2002" textWrap="true"
+  	<Label col="0" row="5" colSpan="2" text="{{answerC}}" textWrap="true"
   		verticalAlignment="center" id="AnswerC" class="answerLabel" />
-  	<Label col="0" row="6" colSpan="2" text="2005" textWrap="true"
+  	<Label col="0" row="6" colSpan="2" text="{{answerD}}" textWrap="true"
   		verticalAlignment="center" id="AnswerD" class="answerLabel" />
   </GridLayout>
 </Page>
