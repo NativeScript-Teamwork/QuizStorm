@@ -9,6 +9,7 @@ var tickSound = sound.create("~/sounds/timer-tick.mp3");
 var heheSound = sound.create("~/sounds/hehehe.mp3");
 
 var currentQuestionIndex;
+var timerInterval;
 var questions;
 
 var pageModules = (function() {
@@ -38,7 +39,6 @@ var pageModules = (function() {
 				switchPlayerTurns();
 			}
 
-
 			currentQuestionIndex++;
 
 			if (currentQuestionIndex >= questions.length) {
@@ -46,6 +46,10 @@ var pageModules = (function() {
 				return;
 			}
 
+			timer.clearInterval(timerInterval);
+			vmModule.gameViewModel.set("questionTimer", 10);
+			vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.get("questionTimer") + ".png");
+			startTimer();
 			setQuestion(questions, currentQuestionIndex);
 		}
 	};
@@ -54,7 +58,7 @@ var pageModules = (function() {
 })();
 
 function startTimer() {
-	var timerInterval = timer.setInterval(function() {
+		timerInterval = timer.setInterval(function() {
 		vmModule.gameViewModel.questionTimer -= 1;
 		vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.questionTimer + ".png");
 		tickSound.play();
@@ -62,6 +66,15 @@ function startTimer() {
 		if (vmModule.gameViewModel.questionTimer === 0) {
 			timer.clearInterval(timerInterval);
 			heheSound.play();
+			currentQuestionIndex++;
+
+			if (currentQuestionIndex >= questions.length) {
+				// what happens when the questions end
+				return;
+			}
+
+			switchPlayerTurns();
+			setQuestion(questions, currentQuestionIndex);
 		}
 	}, 1000);
 }
