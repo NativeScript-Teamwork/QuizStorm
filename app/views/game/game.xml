@@ -16,13 +16,13 @@
   		<Label col="0" row="0" colSpan="2" text="{{questionContent}}" onDoubleTap="enlargeTextDoubleTap" textWrap="true"
   		verticalAlignment="center" id="question"/>
   	</GridLayout>
-  	<Label col="0" row="3" colSpan="2" text="{{answerA}}" tap="answerTapped" textWrap="true"
+  	<Label col="0" row="3" colSpan="2" text="{{answerA}}" swipe="answerSwiped" textWrap="true"
   		verticalAlignment="center" id="AnswerA" class="answerLabel" />
-  	<Label col="0" row="4" colSpan="2" text="{{answerB}}" tap="answerTapped" textWrap="true"
+  	<Label col="0" row="4" colSpan="2" text="{{answerB}}" swipe="answerSwiped" textWrap="true"
   		verticalAlignment="center" id="AnswerB" class="answerLabel" />
-  	<Label col="0" row="5" colSpan="2" text="{{answerC}}" tap="answerTapped" textWrap="true"
+  	<Label col="0" row="5" colSpan="2" text="{{answerC}}" swipe="answerSwiped" textWrap="true"
   		verticalAlignment="center" id="AnswerC" class="answerLabel" />
-  	<Label col="0" row="6" colSpan="2" text="{{answerD}}" tap="answerTapped" textWrap="true"
+  	<Label col="0" row="6" colSpan="2" text="{{answerD}}" swipe="answerSwiped" textWrap="true"
   		verticalAlignment="center" id="AnswerD" class="answerLabel" />
   </GridLayout>
 </Page>

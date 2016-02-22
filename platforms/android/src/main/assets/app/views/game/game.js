@@ -3,6 +3,8 @@ var frameModule = require("ui/frame");
 var sound = require("nativescript-sound");
 var timer = require("timer");
 var sound = require("nativescript-sound");
+var colorModule = require("color");
+var animation = require("ui/animation");
 
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
@@ -16,6 +18,9 @@ var questions;
 
 var largeFont = 20;
 var smallFont = 16;
+var defaultAnswerColor = new colorModule.Color("#2184C8");
+var wrongAnswerColor = new colorModule.Color("#D9523C");
+var correctAnswerColor = new colorModule.Color("#76B900");
 
 var pageModules = (function() {
 	var pageModules = {
@@ -29,8 +34,9 @@ var pageModules = (function() {
 				startGame(data);
 			});
 		},
-		answerTapped: function(args) {
+		answerSwiped: function(args) {
 			var receivedAnswer = args.object.text;
+			var answer = args.object;
 
 			if (currentQuestionIndex >= questions.length) {
 				// what happens when the questions end
@@ -42,25 +48,21 @@ var pageModules = (function() {
 			if (receivedAnswer === questions[currentQuestionIndex].CorrectAnswer) {
 				increaseScoreToPlayerInTurn();
 				correctAnswerSound.play();
+
+				animateAnswerWithColor(answer, correctAnswerColor)
+				.then(function() {
+					prepareForNextQuestion();
+				});
 			}
 			else {
 				switchPlayerTurns();
 				wrongAnswerSound.play();
+
+				animateAnswerWithColor(answer, wrongAnswerColor)
+				.then(function() {
+					prepareForNextQuestion();
+				});
 			}
-
-			currentQuestionIndex++;
-
-			if (currentQuestionIndex >= questions.length) {
-				// what happens when the questions end
-				timer.clearInterval(timerInterval);
-				navigateToGameWinPage();
-				return;
-			}
-
-			timer.clearInterval(timerInterval);
-			setVisualTimerToDefault();
-			startTimer();
-			setQuestion(questions, currentQuestionIndex);
 		},
 		enlargeTextDoubleTap: function(args) {
 			if (args.object.fontSize === smallFont) {
@@ -76,7 +78,7 @@ var pageModules = (function() {
 })();
 
 function startTimer() {
-		timerInterval = timer.setInterval(function() {
+	timerInterval = timer.setInterval(function() {
 		vmModule.gameViewModel.questionTimer -= 1;
 		vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.questionTimer + ".png");
 		tickSound.play();
@@ -179,10 +181,10 @@ function navigateToGameWinPage() {
 	var navigationEntry = {
 		moduleName: "./views/game-win/game-win",
 		backstackVisible: false,
-						animated: true,
-						navigationTransition: {
-								transition: "flip "
-						},
+		animated: true,
+		navigationTransition: {
+			transition: "flip "
+		},
 	};
 
 	topmost.navigate(navigationEntry);
@@ -193,6 +195,37 @@ function setVisualTimerToDefault() {
 	vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.get("questionTimer") + ".png");
 }
 
+function animateAnswerWithColor(answer, colorToAnimate) {
+	return answer.animate({
+		translate: { x: 100, y: 0},
+		duration: 500,
+		backgroundColor: colorToAnimate
+	})
+	.then(function () {
+		return answer.animate({
+			translate: { x: 0, y: 0},
+			duration: 500,
+			backgroundColor: defaultAnswerColor
+		});
+	});
+}
+
+function prepareForNextQuestion() {
+	currentQuestionIndex++;
+
+	if (currentQuestionIndex >= questions.length) {
+		// what happens when the questions end
+		timer.clearInterval(timerInterval);
+		navigateToGameWinPage();
+		return;
+	}
+
+	timer.clearInterval(timerInterval);
+	setVisualTimerToDefault();
+	startTimer();
+	setQuestion(questions, currentQuestionIndex);
+}
+
 exports.pageLoaded = pageModules.pageLoaded;
-exports.answerTapped = pageModules.answerTapped;
+exports.answerSwiped = pageModules.answerSwiped;
 exports.enlargeTextDoubleTap = pageModules.enlargeTextDoubleTap;
