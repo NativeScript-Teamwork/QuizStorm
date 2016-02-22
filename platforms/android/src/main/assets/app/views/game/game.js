@@ -14,6 +14,9 @@ var currentQuestionIndex;
 var timerInterval;
 var questions;
 
+var largeFont = 20;
+var smallFont = 16;
+
 var pageModules = (function() {
 	var pageModules = {
 		pageLoaded: function(args) {
@@ -59,6 +62,14 @@ var pageModules = (function() {
 			startTimer();
 			setQuestion(questions, currentQuestionIndex);
 		},
+		enlargeTextDoubleTap: function(args) {
+			if (args.object.fontSize === smallFont) {
+				args.object.fontSize = largeFont;
+			}
+			else if (args.object.fontSize === largeFont) {
+				args.object.fontSize = smallFont;
+			}
+		}
 	};
 
 	return pageModules;
@@ -184,3 +195,4 @@ function setVisualTimerToDefault() {
 
 exports.pageLoaded = pageModules.pageLoaded;
 exports.answerTapped = pageModules.answerTapped;
+exports.enlargeTextDoubleTap = pageModules.enlargeTextDoubleTap;
