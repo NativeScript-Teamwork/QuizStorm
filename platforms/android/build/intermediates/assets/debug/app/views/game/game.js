@@ -7,6 +7,8 @@ var sound = require("nativescript-sound");
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
 var heheSound = sound.create("~/sounds/hehehe.mp3");
+var correctAnswerSound = sound.create("~/sounds/correct.mp3");
+var wrongAnswerSound = sound.create("~/sounds/wrong.mp3");
 
 var currentQuestionIndex;
 var timerInterval;
@@ -29,29 +31,34 @@ var pageModules = (function() {
 
 			if (currentQuestionIndex >= questions.length) {
 				// what happens when the questions end
+				timer.clearInterval(timerInterval);
+				navigateToGameWinPage();
 				return;
 			}
 
 			if (receivedAnswer === questions[currentQuestionIndex].CorrectAnswer) {
 				increaseScoreToPlayerInTurn();
+				correctAnswerSound.play();
 			}
 			else {
 				switchPlayerTurns();
+				wrongAnswerSound.play();
 			}
 
 			currentQuestionIndex++;
 
 			if (currentQuestionIndex >= questions.length) {
 				// what happens when the questions end
+				timer.clearInterval(timerInterval);
+				navigateToGameWinPage();
 				return;
 			}
 
 			timer.clearInterval(timerInterval);
-			vmModule.gameViewModel.set("questionTimer", 10);
-			vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.get("questionTimer") + ".png");
+			setVisualTimerToDefault();
 			startTimer();
 			setQuestion(questions, currentQuestionIndex);
-		}
+		},
 	};
 
 	return pageModules;
@@ -70,9 +77,12 @@ function startTimer() {
 
 			if (currentQuestionIndex >= questions.length) {
 				// what happens when the questions end
+				navigateToGameWinPage();
 				return;
 			}
 
+			startTimer();
+			setVisualTimerToDefault();
 			switchPlayerTurns();
 			setQuestion(questions, currentQuestionIndex);
 		}
@@ -152,6 +162,24 @@ function switchPlayerTurns() {
 		vmModule.gameViewModel.set("redPlayer", {name: redPlayer.name, score: redPlayer.score, turn: true, country: redPlayer.country});
 		vmModule.gameViewModel.set("turnCol", 0);
 	}
+}
+
+function navigateToGameWinPage() {
+	var navigationEntry = {
+		moduleName: "./views/game-win/game-win",
+		backstackVisible: false,
+						animated: true,
+						navigationTransition: {
+								transition: "flip "
+						},
+	};
+
+	topmost.navigate(navigationEntry);
+}
+
+function setVisualTimerToDefault() {
+	vmModule.gameViewModel.set("questionTimer", 10);
+	vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.get("questionTimer") + ".png");
 }
 
 exports.pageLoaded = pageModules.pageLoaded;
