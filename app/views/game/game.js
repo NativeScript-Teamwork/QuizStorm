@@ -7,6 +7,8 @@ var sound = require("nativescript-sound");
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
 var heheSound = sound.create("~/sounds/hehehe.mp3");
+var correctAnswerSound = sound.create("~/sounds/correct.mp3");
+var wrongAnswerSound = sound.create("~/sounds/wrong.mp3");
 
 var currentQuestionIndex;
 var timerInterval;
@@ -34,9 +36,11 @@ var pageModules = (function() {
 
 			if (receivedAnswer === questions[currentQuestionIndex].CorrectAnswer) {
 				increaseScoreToPlayerInTurn();
+				correctAnswerSound.play();
 			}
 			else {
 				switchPlayerTurns();
+				wrongAnswerSound.play();
 			}
 
 			currentQuestionIndex++;
