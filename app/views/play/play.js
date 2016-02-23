@@ -88,7 +88,7 @@ var pageModules = (function() {
 					},
 				};
 
-				topmost.navgiate(navigationEntry);
+				topmost.navigate(navigationEntry);
 			}
 		}
 	};
