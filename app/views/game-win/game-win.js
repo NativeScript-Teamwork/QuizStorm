@@ -9,7 +9,7 @@ var pageModules = (function() {
 	var pageModules = {
 		pageLoaded: function(args) {
 			var page = args.object;
-			page.bindingContext = vmModule.homeViewModel;
+			page.bindingContext = vmModule.gameWinViewModel;
 			topmost = frameModule.topmost();
 		},
 		navigateToHomePage: function() {

@@ -5,6 +5,7 @@ var timer = require("timer");
 var sound = require("nativescript-sound");
 var colorModule = require("color");
 var animation = require("ui/animation");
+var playerService = require("~/services/player-service");
 
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
