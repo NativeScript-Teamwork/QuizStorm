@@ -14,7 +14,7 @@ var pageModules = (function() {
 
 	var topmost;
 	var toast;
-	var numberOfPlayers = 0;
+	var numberOfPlayers;
 
 	playerService.Players.deleteDataFromTable("Players");
 
@@ -23,7 +23,7 @@ var pageModules = (function() {
 			var page = args.object;
 			page.bindingContext = vmModule.playViewModel;
 			topmost = frameModule.topmost();
-
+			numberOfPlayers = 0;
 		},
 		addPlayerButton: function(args) {
 			heheSound.play();

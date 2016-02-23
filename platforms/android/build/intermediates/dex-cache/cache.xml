@@ -2,25 +2,25 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\libs\widgets.jar"
+        jar="C:\Users\BaSk3T\Desktop\asd\QuizStorm\platforms\android\libs\nativescript.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
-        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\widgets-f8bc462787d91c4651b201b5629fb5894cd45e78.jar" />
-    </item>
-    <item
-        jar="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\libs\nativescript.jar"
-        jumboMode="false"
-        revision="23.0.1"
+        revision="23.0.2"
         sha1="e49ee2301dce2f85edd44f634fd45ad92df9e00a">
-        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\nativescript-0eb75d773ee90d0bb0db69eae958a23e11890694.jar" />
+        <dex dex="C:\Users\BaSk3T\Desktop\asd\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\nativescript-e111c9e4b461b8e0151ccc927d2aec4c6e6084e3.jar" />
     </item>
     <item
-        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jar="C:\Users\BaSk3T\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
-        <dex dex="C:\Users\dsd36\Desktop\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-a251b75a5ef6f265d22ca5bee22db19401679737.jar" />
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\BaSk3T\Desktop\asd\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-2ac705b8a7ba0f5c19d77d6aa49e73165c3dd19a.jar" />
+    </item>
+    <item
+        jar="C:\Users\BaSk3T\Desktop\asd\QuizStorm\platforms\android\libs\widgets.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ff3c62a8eb22f0111b882125ad1579dc6273fd90">
+        <dex dex="C:\Users\BaSk3T\Desktop\asd\QuizStorm\platforms\android\build\intermediates\pre-dexed\debug\widgets-406f1b722a9600e0f126ddfe8eff8ef963321ffc.jar" />
     </item>
 
 </items>
