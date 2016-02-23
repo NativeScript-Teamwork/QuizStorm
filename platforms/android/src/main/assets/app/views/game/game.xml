@@ -1,4 +1,4 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded" unloaded="pageUnloaded">
   <GridLayout columns="*, *" rows="2*,3*,5*,2*,2*,2*,2*,*" id="gamePageGrid">
   	<GridLayout col="0" row="0" columns="2*,*,*" id="playerOnePointsGrid">
   		<Label col="0" row="0" text="{{redPlayer.name}}" class="gameGridPlayerLabel" />
