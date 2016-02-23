@@ -33,6 +33,14 @@ var pageModules = (function() {
 			topmost = frameModule.topmost();
 
 			if (!unloaded) {
+				vmModule.gameViewModel.setPlayers()
+				.then(function() {
+					var redPlayer = vmModule.gameViewModel.get("redPlayer");
+					var bluePlayer = vmModule.gameViewModel.get("bluePlayer");
+					vmModule.gameViewModel.set("bluePlayer", {name: bluePlayer.name, score: bluePlayer.score, turn: bluePlayer.turn, country: bluePlayer.country});
+					vmModule.gameViewModel.set("redPlayer", {name: redPlayer.name, score: redPlayer.score, turn: redPlayer.turn, country: redPlayer.country});
+				});
+
 				vmModule.gameViewModel.get("allQuestions")
 				.then(function(data) {
 					startGame(data);

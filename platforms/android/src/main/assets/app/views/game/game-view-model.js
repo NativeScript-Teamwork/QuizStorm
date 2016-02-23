@@ -16,13 +16,14 @@ var GameModel = (function (_super) {
     questionService.Question.deleteDataFromTable('Question');
     questionService.Question.seedQuestions();
 
-    var players = playerService.Players.getPlayers();
     var that = this;
 
-    players.then(function(data) {
-      that.redPlayer = {name: data[0][1], score: 0, turn: false, country: "Bulgaria"};
-      that.bluePlayer = {name: data[1][1], score: 0, turn: false, country: "Bulgaria"};
-    });
+    this.setPlayers = function() {
+      return  playerService.Players.getPlayers().then(function(data) {
+        that.redPlayer = {name: data[0][1], score: 0, turn: false, country: "Bulgaria"};
+        that.bluePlayer = {name: data[1][1], score: 0, turn: false, country: "Bulgaria"};
+      });
+    };
 
     this.timerImageSrc = "~/images/timer/timer-10.png";
 
@@ -30,21 +31,21 @@ var GameModel = (function (_super) {
       questionService.Question.getAllQuestions().then(function(data) {
         var questionsSQLite = [];
 
-          for (var i = 0; i < data.length; i += 1) {
-            var question = {
-              questionContent: data[i][1],
-              answerA: data[i][2],
-              answerB: data[i][3],
-              answerC: data[i][4],
-              answerD: data[i][5],
-              correctAnswer: data[i][6],
-              hint: data[i][7]
-            };
+        for (var i = 0; i < data.length; i += 1) {
+          var question = {
+            questionContent: data[i][1],
+            answerA: data[i][2],
+            answerB: data[i][3],
+            answerC: data[i][4],
+            answerD: data[i][5],
+            correctAnswer: data[i][6],
+            hint: data[i][7]
+          };
 
-            questionsSQLite.push(question);
-          }
+          questionsSQLite.push(question);
+        }
 
-          that.allQuestions = questionsSQLite;
+        that.allQuestions = questionsSQLite;
       });
 
       console.log('Connection type: none');
