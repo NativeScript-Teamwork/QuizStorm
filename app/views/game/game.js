@@ -3,6 +3,8 @@ var frameModule = require("ui/frame");
 var sound = require("nativescript-sound");
 var timer = require("timer");
 var sound = require("nativescript-sound");
+var colorModule = require("color");
+var animation = require("ui/animation");
 
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
@@ -14,8 +16,14 @@ var currentQuestionIndex;
 var timerInterval;
 var questions;
 
+var topmost;
 var largeFont = 20;
 var smallFont = 16;
+var unloaded = false;
+var isGameRunning = true;
+var defaultAnswerColor = new colorModule.Color("#2184C8");
+var wrongAnswerColor = new colorModule.Color("#D9523C");
+var correctAnswerColor = new colorModule.Color("#76B900");
 
 var pageModules = (function() {
 	var pageModules = {
@@ -24,13 +32,28 @@ var pageModules = (function() {
 			page.bindingContext = vmModule.gameViewModel;
 			topmost = frameModule.topmost();
 
-			vmModule.gameViewModel.get("allQuestions")
-			.then(function(data) {
-				startGame(data);
-			});
+			if (!unloaded) {
+				vmModule.gameViewModel.get("allQuestions")
+				.then(function(data) {
+					startGame(data);
+				});
+			}
+			else {
+				startTimer();
+			}
+
+			unloaded = false;
 		},
-		answerTapped: function(args) {
+		pageUnloaded: function(args) {
+			if (isGameRunning) {
+				unloaded = true;
+			}
+
+			timer.clearInterval(timerInterval);
+		},
+		answerSwiped: function(args) {
 			var receivedAnswer = args.object.text;
+			var answer = args.object;
 
 			if (currentQuestionIndex >= questions.length) {
 				// what happens when the questions end
@@ -42,25 +65,21 @@ var pageModules = (function() {
 			if (receivedAnswer === questions[currentQuestionIndex].CorrectAnswer) {
 				increaseScoreToPlayerInTurn();
 				correctAnswerSound.play();
+
+				animateAnswerWithColor(answer, correctAnswerColor)
+				.then(function() {
+					prepareForNextQuestion();
+				});
 			}
 			else {
 				switchPlayerTurns();
 				wrongAnswerSound.play();
+
+				animateAnswerWithColor(answer, wrongAnswerColor)
+				.then(function() {
+					prepareForNextQuestion();
+				});
 			}
-
-			currentQuestionIndex++;
-
-			if (currentQuestionIndex >= questions.length) {
-				// what happens when the questions end
-				timer.clearInterval(timerInterval);
-				navigateToGameWinPage();
-				return;
-			}
-
-			timer.clearInterval(timerInterval);
-			setVisualTimerToDefault();
-			startTimer();
-			setQuestion(questions, currentQuestionIndex);
 		},
 		enlargeTextDoubleTap: function(args) {
 			if (args.object.fontSize === smallFont) {
@@ -76,7 +95,7 @@ var pageModules = (function() {
 })();
 
 function startTimer() {
-		timerInterval = timer.setInterval(function() {
+	timerInterval = timer.setInterval(function() {
 		vmModule.gameViewModel.questionTimer -= 1;
 		vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.questionTimer + ".png");
 		tickSound.play();
@@ -100,7 +119,6 @@ function startTimer() {
 	}, 1000);
 }
 
-
 function setQuestion(questions, questionIndex) {
 	vmModule.gameViewModel.set("answerA", questions[questionIndex].AnswerA);
 	vmModule.gameViewModel.set("answerB", questions[questionIndex].AnswerB);
@@ -111,11 +129,12 @@ function setQuestion(questions, questionIndex) {
 
 function randomizeArray(array) {
 	var newArray = [];
+	var copyOfOriginal = array.slice(0);
 
-	while (array.length !== 0) {
-		var random = Math.floor(Math.random() * array.length);
-		var value = array[random];
-		array.splice(random, 1);
+	while (copyOfOriginal.length !== 0) {
+		var random = Math.floor(Math.random() * copyOfOriginal.length);
+		var value = copyOfOriginal[random];
+		copyOfOriginal.splice(random, 1);
 		newArray.push(value);
 	}
 
@@ -123,12 +142,13 @@ function randomizeArray(array) {
 }
 
 function startGame(data) {
+	isGameRunning = true;
 	currentQuestionIndex = 0;
+	vmModule.gameViewModel.set("questionTimer", 10);
 	questions = randomizeArray(data);
 	assignPlayerFirstRandomly();
 	startTimer();
 	setQuestion(questions, currentQuestionIndex);
-
 }
 
 function assignPlayerFirstRandomly() {
@@ -179,12 +199,15 @@ function navigateToGameWinPage() {
 	var navigationEntry = {
 		moduleName: "./views/game-win/game-win",
 		backstackVisible: false,
-						animated: true,
-						navigationTransition: {
-								transition: "flip "
-						},
+		animated: true,
+		navigationTransition: {
+			transition: "flip "
+		},
 	};
 
+	unloaded = false;
+	isGameRunning = false;
+	timer.clearInterval(timerInterval);
 	topmost.navigate(navigationEntry);
 }
 
@@ -193,6 +216,38 @@ function setVisualTimerToDefault() {
 	vmModule.gameViewModel.set("timerImageSrc", timerImageSrc + vmModule.gameViewModel.get("questionTimer") + ".png");
 }
 
+function animateAnswerWithColor(answer, colorToAnimate) {
+	return answer.animate({
+		translate: { x: 100, y: 0},
+		duration: 500,
+		backgroundColor: colorToAnimate
+	})
+	.then(function () {
+		return answer.animate({
+			translate: { x: 0, y: 0},
+			duration: 500,
+			backgroundColor: defaultAnswerColor
+		});
+	});
+}
+
+function prepareForNextQuestion() {
+	currentQuestionIndex++;
+
+	if (currentQuestionIndex >= questions.length) {
+		// what happens when the questions end
+		timer.clearInterval(timerInterval);
+		navigateToGameWinPage();
+		return;
+	}
+
+	timer.clearInterval(timerInterval);
+	setVisualTimerToDefault();
+	startTimer();
+	setQuestion(questions, currentQuestionIndex);
+}
+
 exports.pageLoaded = pageModules.pageLoaded;
-exports.answerTapped = pageModules.answerTapped;
+exports.pageUnloaded = pageModules.pageUnloaded;
+exports.answerSwiped = pageModules.answerSwiped;
 exports.enlargeTextDoubleTap = pageModules.enlargeTextDoubleTap;

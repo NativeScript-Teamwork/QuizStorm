@@ -6,7 +6,6 @@ var Scores = (function (_super) {
         _super.call(this);
     }
     
-    
     Scores.prototype.addWorldwideScore = function (id, player, points, country) {
         global.db.execSQL("insert into WorldwideScore values (?, ?, ?, ?)", [id, player, points, country])
         .then(function(id){
@@ -15,7 +14,7 @@ var Scores = (function (_super) {
             console.log(err);
         });
     };
-    
+
     Scores.prototype.addLocalScore = function (player, points, country) {
         global.db.execSQL("insert into LocalScore values (?, ?, ?)", [player, points, country])
         .then(function(id){
@@ -53,7 +52,7 @@ var Scores = (function (_super) {
             console.log(err);
         });
     };
-    
+
     Scores.prototype.deleteDataFromTable = function (name) {
         return global.db.all("delete from " + name + ";")
         .then(function() {
