@@ -13,6 +13,7 @@ exports.initializeSQLite = function() {
 	    global.db.execSQL("CREATE TABLE `WorldwideScore` (`WorldwideScoreId` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Player` TEXT NOT NULL, `Points` INTEGER, `Country` TEXT NOT NULL );"); 
 	    global.db.execSQL("CREATE TABLE `LocalScore` (`LocalScoreId` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Player` TEXT NOT NULL, `Points` INTEGER, `Country` TEXT NOT NULL );"); 
 	    global.db.execSQL("CREATE TABLE `Players` (`PlayersId` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `Player` TEXT NOT NULL, `Points` INTEGER );"); 
+	    global.db.execSQL("CREATE TABLE `Question` (`QuestionId` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, `QuestionContent` TEXT NOT NULL, `AnswerA` TEXT NOT NULL, `AnswerB` TEXT NOT NULL, `AnswerC` TEXT NOT NULL, `AnswerD` TEXT NOT NULL, `CorrectAnswer` TEXT NOT NULL, `Hint` TEXT NOT NULL );"); 
 
 		console.log("Tables created..."); 
 	});  

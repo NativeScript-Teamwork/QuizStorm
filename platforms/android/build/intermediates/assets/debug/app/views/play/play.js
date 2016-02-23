@@ -16,6 +16,8 @@ var pageModules = (function() {
 	var toast;
 	var numberOfPlayers = 0;
 
+	playerService.Players.deleteDataFromTable("Players");
+
 	var pageModules = {
 		pageLoaded: function(args) {
 			var page = args.object;
@@ -65,16 +67,27 @@ var pageModules = (function() {
 
 			addPlayerTextField.text = "";
 		},
-		navigateToTips: function() { // navigate after the two players are added
+		navigateToTips: function() { 
 			tapButtonSound.play();
-			var navigationEntry = {
-				moduleName: "./views/tips/tips",
-				backstackVisible: false,
-				animated: true,
-				navigationTransition: {
-					transition: "flip "
-				},
-			};
+
+			if (numberOfPlayers === 0) {
+				toast = Toast.makeText("You must add 2 players", "long");
+				toast.show();
+				return;
+			} else if (numberOfPlayers === 1) {
+				toast = Toast.makeText("You must add \"Player 2\"", "long");
+				toast.show();
+				return;
+			} else {
+				var navigationEntry = {
+						moduleName: "./views/tips/tips",
+						backstackVisible: false,
+						animated: true,
+						navigationTransition: {
+						transition: "flip "
+					},
+				};
+			}
 
 			topmost.navigate(navigationEntry);
 		}

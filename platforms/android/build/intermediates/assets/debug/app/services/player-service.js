@@ -17,9 +17,10 @@ var Players = (function (_super) {
     };
 
     Players.prototype.getPlayers = function () {
-        global.db.execSQL("select * from Players")
-        .then(function(id){
-            console.log("inserted:", id);
+        return global.db.all("select * from Players")
+        .then(function(data){
+            console.log("result is: ", data);
+            return data;
         }, function(err){
             console.log(err);
         });

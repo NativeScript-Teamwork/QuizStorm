@@ -2,6 +2,9 @@ var observable = require("data/observable");
 var globalConstants = require("~/common/global-constants");
 var Everlive = require('~/everlive.all.min');
 var el = new Everlive(globalConstants.ApiId);
+var connection = require("~/common/internet-connection");
+var playerService = require("~/services/player-service");
+var questionService = require("~/services/question-service");
 
 var GameModel = (function (_super) {
   __extends(GameModel, _super);
@@ -10,18 +13,51 @@ var GameModel = (function (_super) {
     this.questionTimer = 10;
     this.turnCol = 0;
 
-    this.redPlayer = {name: "Gosho", score: 0, turn: false, country: "Bulgaria"};
-    this.bluePlayer = {name: "Penka", score: 0, turn: false, country: "Bulgaria"};
+    questionService.Question.seedQuestions();
+
+    var players = playerService.Players.getPlayers();
+    var that = this;
+
+    players.then(function(data) {
+      that.redPlayer = {name: data[0][1], score: 0, turn: false, country: "Bulgaria"};
+      that.bluePlayer = {name: data[1][1], score: 0, turn: false, country: "Bulgaria"};
+    });
 
     this.timerImageSrc = "~/images/timer/timer-10.png";
 
-    var questions = el.data('Question');
+    if (connection.networkType === 'none') {
+      questionService.Question.getAllQuestions().then(function(data) {
+        var questionsSQLite = [];
 
-    this.allQuestions = questions.get().then(function(data) {
-      return data.result;
-    }, function(error){
-      console.log(error);
-    });
+          for (var i = 0; i < data.length; i += 1) {
+            var question = {
+              questionContent: data[i][1],
+              answerA: data[i][2],
+              answerB: data[i][3],
+              answerC: data[i][4],
+              answerD: data[i][5],
+              correctAnswer: data[i][6],
+              hint: data[i][7]
+            };
+
+            questionsSQLite.push(question);
+          }
+
+          that.allQuestions = questionsSQLite;
+      });
+
+      console.log('Connection type: none');
+    } else if (connection.networkType === 'wifi'|| connection.networkType === 'mobile') {
+      var questions = el.data('Question');
+
+      that.allQuestions = questions.get().then(function(data) {
+        return data.result;
+      }, function(error){
+        console.log(error);
+      });
+
+      console.log('Connecion type: wifi/mobile');
+    }
   }
   return GameModel;
 })(observable.Observable);

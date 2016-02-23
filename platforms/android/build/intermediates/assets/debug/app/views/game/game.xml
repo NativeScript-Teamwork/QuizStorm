@@ -13,7 +13,7 @@
   	<Image col="0" row="1" colSpan="2" src="{{timerImageSrc}}" id="timer-sprite"/>
     <Image col="{{turnCol}}" row="1" src="~/images/turn-minion.png"/>
   	<GridLayout col="0" row="2" colSpan="2" id="questionGridLabel" >
-  		<Label col="0" row="0" colSpan="2" text="{{questionContent}}" textWrap="true"
+  		<Label col="0" row="0" colSpan="2" text="{{questionContent}}" onDoubleTap="enlargeTextDoubleTap" textWrap="true"
   		verticalAlignment="center" id="question"/>
   	</GridLayout>
   	<Label col="0" row="3" colSpan="2" text="{{answerA}}" tap="answerTapped" textWrap="true"
