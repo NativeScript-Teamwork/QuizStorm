@@ -1,6 +1,7 @@
 var observable = require("data/observable");
 var globalConstants = require("~/common/global-constants");
 var Everlive = require('~/everlive.all.min');
+var playerService = require("~/services/player-service");
 var el = new Everlive(globalConstants.ApiId);
 
 var GameModel = (function (_super) {
@@ -10,8 +11,14 @@ var GameModel = (function (_super) {
     this.questionTimer = 10;
     this.turnCol = 0;
 
-    this.redPlayer = {name: "Gosho", score: 0, turn: false, country: "Bulgaria"};
-    this.bluePlayer = {name: "Penka", score: 0, turn: false, country: "Bulgaria"};
+    var that = this;
+
+    playerService.Players.getPlayers()
+    .then(function(data) {
+      that.redPlayer = {name: data[0][1], score: +data[0][2], turn: false};
+      that.bluePlayer = {name: data[1][1], score: +data[1][2], turn: false};
+
+    });
 
     this.timerImageSrc = "~/images/timer/timer-10.png";
 
