@@ -16,6 +16,7 @@ var currentQuestionIndex;
 var timerInterval;
 var questions;
 
+var topmost;
 var largeFont = 20;
 var smallFont = 16;
 var unloaded = false;

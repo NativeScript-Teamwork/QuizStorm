@@ -54,7 +54,7 @@ var pageModules = (function() {
 
 				// Adding player 1 to SQLite
 				playerService.Players.addPlayer(0, addPlayerTextField.text, 0);
-				numberOfPlayers += 1
+				numberOfPlayers += 1;
 			}
 			else if (numberOfPlayers === 1){
 				var player2NameTextField = view.getViewById(page, "player2-name");
@@ -63,11 +63,11 @@ var pageModules = (function() {
 				// Adding player 2  to SQlite
 				playerService.Players.addPlayer(1, addPlayerTextField.text, 0);
 				numberOfPlayers += 1;
-			} 
+			}
 
 			addPlayerTextField.text = "";
 		},
-		navigateToTips: function() { 
+		navigateToTips: function() {
 			tapButtonSound.play();
 
 			if (numberOfPlayers === 0) {
@@ -87,9 +87,9 @@ var pageModules = (function() {
 						transition: "flip "
 					},
 				};
-			}
 
-			topmost.navigate(navigationEntry);
+				topmost.navgiate(navigationEntry);
+			}
 		}
 	};
 
