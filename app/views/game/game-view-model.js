@@ -44,7 +44,7 @@ var GameModel = (function (_super) {
             questionsSQLite.push(question);
           }
 
-          that.àllQuestions = questionsSQLite;
+          that.allQuestions = questionsSQLite;
       });
 
       console.log('Connection type: none');

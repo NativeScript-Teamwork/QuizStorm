@@ -13,6 +13,7 @@ var GameModel = (function (_super) {
     this.questionTimer = 10;
     this.turnCol = 0;
 
+    questionService.Question.deleteDataFromTable('Question');
     questionService.Question.seedQuestions();
 
     var players = playerService.Players.getPlayers();
@@ -43,7 +44,7 @@ var GameModel = (function (_super) {
             questionsSQLite.push(question);
           }
 
-          that.allQuestions = questionsSQLite;
+          that.àllQuestions = questionsSQLite;
       });
 
       console.log('Connection type: none');
