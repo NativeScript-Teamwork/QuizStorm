@@ -20,8 +20,8 @@ var GameModel = (function (_super) {
 
     this.setPlayers = function() {
       return  playerService.Players.getPlayers().then(function(data) {
-        that.redPlayer = {name: data[0][1], score: 0, turn: false, country: "Bulgaria"};
-        that.bluePlayer = {name: data[1][1], score: 0, turn: false, country: "Bulgaria"};
+        that.redPlayer = global.redPlayer;
+        that.bluePlayer = global.bluePlayer;
       });
     };
 

@@ -215,3 +215,26 @@
 	font-family: monospace;
 	background-color: #0271BC;
 }
+
+/* ---------- Winner Page CSS ---------- */
+
+#winner-name {
+	font-size: 50;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	color: white;
+	margin: 40 0 0 0;
+	background-color: #40CA18;
+	height: 35;
+}
+
+#winner-points {
+	font-size: 40;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	margin: 10 0 0 0;
+	background-color: #D94A3D;
+	height: 70;
+}

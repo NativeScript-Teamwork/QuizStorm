@@ -8,20 +8,20 @@ var Everlive = require('~/everlive.all.min');
 var el = new Everlive(globalConstants.ApiId);
 
 var winnerNamePropName = "winnerName";
-var winnerPointsPropName = "winnerPoints"
+var winnerPointsPropName = "winnerPoints";
 
 var GameWinViewModel = new observable.Observable();
 
-page.on("navigatedTo", function (eventData) {
-   var playerOne = page.navigationContext.playerOne;
-   console.log(playerOne.name);
-});
-
-playerService.Players.getPlayerWinner().then(function(data) {
-	console.log(data.result[0][1]);
-	console.log(data.result[0][2]);
-	GameWinViewModel.set(winnerNamePropName, data.result[0][1]);
-	GameWinViewModel.set(winnerPointsPropName, data.result[0][2]);
-});
+GameWinViewModel.setWinner = function() {
+  if (global.redPlayer.score > global.bluePlayer.score) {
+    GameWinViewModel.set("nameOfWinner", global.redPlayer.name);
+    GameWinViewModel.set("scoreOfWinner", global.redPlayer.score);
+  }
+  else {
+    GameWinViewModel.set("nameOfWinner", global.bluePlayer.name);
+    GameWinViewModel.set("scoreOfWinner", global.bluePlayer.score);
+  }
+};
 
 exports.gameWinViewModel = GameWinViewModel;
+exports.setWinner = GameWinViewModel.setWinner;

@@ -5,6 +5,7 @@ var timer = require("timer");
 var sound = require("nativescript-sound");
 var colorModule = require("color");
 var animation = require("ui/animation");
+var playerService = require("~/services/player-service");
 
 var timerImageSrc = "~/images/timer/timer-";
 var tickSound = sound.create("~/sounds/timer-tick.mp3");
@@ -212,6 +213,10 @@ function navigateToGameWinPage() {
 			transition: "flip "
 		},
 	};
+
+
+	global.redPlayer = vmModule.gameViewModel.get("redPlayer");
+	global.bluePlayer = vmModule.gameViewModel.get("bluePlayer");
 
 	unloaded = false;
 	isGameRunning = false;

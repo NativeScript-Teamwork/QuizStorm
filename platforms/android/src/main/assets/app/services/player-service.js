@@ -26,6 +26,16 @@ var Players = (function (_super) {
         });
     };
 
+    Players.prototype.getPlayerWinner = function () {
+        return global.db.all("select * from Players order by points desc limit 1;")
+        .then(function(resultSet) {
+            console.log("result is: ", resultSet);
+            return resultSet;
+        }, function(err){
+            console.log(err);
+        });
+    };
+
     Players.prototype.dropPlayerTable = function (name) {
         return global.db.all("drop table " + name + ";")
         .then(function() {
@@ -38,7 +48,7 @@ var Players = (function (_super) {
     Players.prototype.deleteDataFromTable = function (name) {
         return global.db.all("delete from " + name + ";")
         .then(function() {
-            console.log("Old data removed");
+            console.log("Old data removed: " + name);
         }, function(err){
             console.log(err);
         });

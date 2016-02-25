@@ -214,6 +214,10 @@ function navigateToGameWinPage() {
 		},
 	};
 
+
+	global.redPlayer = vmModule.gameViewModel.get("redPlayer");
+	global.bluePlayer = vmModule.gameViewModel.get("bluePlayer");
+
 	unloaded = false;
 	isGameRunning = false;
 	timer.clearInterval(timerInterval);

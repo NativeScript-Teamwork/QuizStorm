@@ -1,5 +1,9 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <GridLayout columns="*, 2*, *" rows="3*, *, *, *" id="homeGrid">
-    <Label text="Game win" row="0" col="0" />
+  <GridLayout columns="*, 2*, *" rows="*, 2*, *, *, *, 4*" id="homeGrid">
+    <Image col="0" row="0" colSpan="3" src="~/images/winner-page-logo.png"/>
+    <Label col="0" row="1" colSpan="3" text="{{nameOfWinner}}" id="winner-name"/>
+    <Label col="0" row="2" colSpan="3" text="{{scoreOfWinner}}" id="winner-points"/>
+    <Image col="0" row="4" colSpan="3" src="~/images/save-result.png" tap="navigateToHomePage"/>
+    <Image col="0" row="5" colSpan="3" src="~/images/treasure.png"/>
   </GridLayout>
 </Page>

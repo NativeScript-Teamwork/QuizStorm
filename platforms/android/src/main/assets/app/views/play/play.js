@@ -14,7 +14,6 @@ var pageModules = (function() {
 
 	var topmost;
 	var toast;
-	var numberOfPlayers;
 
 	playerService.Players.deleteDataFromTable("Players");
 
@@ -23,7 +22,6 @@ var pageModules = (function() {
 			var page = args.object;
 			page.bindingContext = vmModule.playViewModel;
 			topmost = frameModule.topmost();
-			numberOfPlayers = 0;
 		},
 		addPlayerButton: function(args) {
 			heheSound.play();
@@ -48,21 +46,23 @@ var pageModules = (function() {
 				return;
 			}
 
-			if (numberOfPlayers === 0) {
+			if (global.numberOfPlayers === 0) {
 				var player1NameTextField = view.getViewById(page, "player1-name");
 				player1NameTextField.text = addPlayerTextField.text;
 
 				// Adding player 1 to SQLite
-				playerService.Players.addPlayer(0, addPlayerTextField.text, 0);
-				numberOfPlayers += 1;
+				// playerService.Players.addPlayer(0, addPlayerTextField.text, 0);
+				global.redPlayer = { name: player1NameTextField.text, score: 0, turn: false, country: "Bulgaria" };
+				global.numberOfPlayers += 1;
 			}
-			else if (numberOfPlayers === 1){
+			else if (global.numberOfPlayers === 1){
 				var player2NameTextField = view.getViewById(page, "player2-name");
 				player2NameTextField.text = addPlayerTextField.text;
 
 				// Adding player 2  to SQlite
-				playerService.Players.addPlayer(1, addPlayerTextField.text, 0);
-				numberOfPlayers += 1;
+				// playerService.Players.addPlayer(1, addPlayerTextField.text, 0);
+				global.bluePlayer = { name: player2NameTextField.text, score: 0, turn: false, country: "Bulgaria" };
+				global.numberOfPlayers += 1;
 			}
 
 			addPlayerTextField.text = "";
@@ -70,11 +70,11 @@ var pageModules = (function() {
 		navigateToTips: function() {
 			tapButtonSound.play();
 
-			if (numberOfPlayers === 0) {
+			if (global.numberOfPlayers === 0) {
 				toast = Toast.makeText("You must add 2 players", "long");
 				toast.show();
 				return;
-			} else if (numberOfPlayers === 1) {
+			} else if (global.numberOfPlayers === 1) {
 				toast = Toast.makeText("You must add \"Player 2\"", "long");
 				toast.show();
 				return;

@@ -9,7 +9,9 @@ var pageModules = (function() {
 	var pageModules = {
 		pageLoaded: function(args) {
 			var page = args.object;
-			page.bindingContext = vmModule.homeViewModel;
+			page.bindingContext = vmModule.gameWinViewModel;
+			global.numberOfPlayers = 0;
+			vmModule.gameWinViewModel.setWinner();
 			topmost = frameModule.topmost();
 		},
 		navigateToHomePage: function() {
@@ -17,10 +19,10 @@ var pageModules = (function() {
 			var navigationEntry = {
 				moduleName: "./views/home/home",
 				backstackVisible: false,
-                animated: true,
-                navigationTransition: {
-                    transition: "flip "
-                },
+				animated: true,
+				navigationTransition: {
+					transition: "flip "
+				},
 			};
 
 			topmost.navigate(navigationEntry);
